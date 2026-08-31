@@ -1,0 +1,52 @@
+:root {
+  /* New Palette */
+  --sf-deep-ocean: #073B4C;
+  --sf-marine-blue: #118AB2;
+  --sf-mist: #F2F8FA;
+  --sf-oil-spill: #1B1B1B;
+  --sf-warning-color: #F4A261;
+  --sf-critical: #E76F51;
+  --sf-env-green: #2A9D8F;
+  --sf-white: #FFFFFF;
+
+  /* Semantic variables */
+  --sf-bg: var(--sf-mist);
+  --sf-bg-2: #E4EEF2;
+  --sf-bg-hover: #D5E5EB;
+  
+  --sf-surface: var(--sf-white);
+  --sf-surface-elevated: var(--sf-white);
+  
+  --sf-text-primary: var(--sf-oil-spill);
+  --sf-text-secondary: #4A6B7C;
+  --sf-text-muted: #6B8B9C;
+  
+  --sf-accent: var(--sf-marine-blue);
+  --sf-accent-hover: #0F7899;
+  --sf-highlight: var(--sf-critical);
+  
+  --sf-border: #D1E3EA;
+  --sf-border-hover: var(--sf-marine-blue);
+  --sf-border-active: var(--sf-deep-ocean);
+
+  --sf-success: var(--sf-env-green);
+  --sf-success-glow: rgba(42, 157, 143, 0.2);
+  --sf-warning: var(--sf-warning-color);
+  --sf-warning-glow: rgba(244, 162, 97, 0.2);
+  --sf-danger: var(--sf-critical);
+  --sf-danger-glow: rgba(231, 111, 81, 0.2);
+
+  --sf-cyan: var(--sf-marine-blue);
+  --sf-cyan-glow: rgba(17, 138, 178, 0.2);
+  --sf-blue: var(--sf-deep-ocean);
+  --sf-blue-glow: rgba(7, 59, 76, 0.2);
+  --sf-text: var(--sf-text-primary);
+  --sf-muted: var(--sf-text-secondary);
+  --sf-card: var(--sf-surface);
+  --sf-card-hover: var(--sf-surface);
+
+  --sf-radius: 12px;
+  --sf-radius-lg: 16px;
+  --sf-font: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --sf-shadow: 0 4px 24px rgba(7, 59, 76, 0.08);
+}

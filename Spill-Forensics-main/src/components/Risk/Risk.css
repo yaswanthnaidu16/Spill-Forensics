@@ -1,0 +1,92 @@
+.risk-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.risk-level-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--sf-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.risk-level-display.high {
+  background: rgba(231, 111, 81, 0.08);
+  border-color: rgba(231, 111, 81, 0.2);
+  color: var(--sf-danger);
+  box-shadow: inset 0 0 15px rgba(231, 111, 81, 0.05);
+}
+
+.risk-level-display.medium {
+  background: rgba(244, 162, 97, 0.08);
+  border-color: rgba(244, 162, 97, 0.2);
+  color: var(--sf-warning);
+  box-shadow: inset 0 0 15px rgba(244, 162, 97, 0.05);
+}
+
+.risk-level-display.low {
+  background: rgba(42, 157, 143, 0.08);
+  border-color: rgba(42, 157, 143, 0.2);
+  color: var(--sf-success);
+  box-shadow: inset 0 0 15px rgba(42, 157, 143, 0.05);
+}
+
+.risk-percentage {
+  font-size: 2.5rem;
+  font-weight: 950;
+  line-height: 1;
+  font-family: monospace;
+}
+
+.risk-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.progress-bar-custom-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--sf-text-secondary);
+}
+
+.progress-bar-outer {
+  height: 8px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+}
+
+.progress-bar-inner.danger {
+  background: var(--sf-danger);
+}
+
+.progress-bar-inner.warning {
+  background: var(--sf-warning);
+}
+
+.progress-bar-inner.success {
+  background: var(--sf-success);
+}

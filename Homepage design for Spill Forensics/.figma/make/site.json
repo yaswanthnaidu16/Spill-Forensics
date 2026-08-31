@@ -1,0 +1,10 @@
+{
+  "description": "Detects and tracks oil spills using Sentinel-1 SAR data and AIS vessel info, providing accurate spill identification and responsible party tracing.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,168 @@
+.forensics-card-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.forensics-metric-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.forensics-metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.forensics-metric-label {
+  font-size: 0.8rem;
+  color: var(--sf-text-secondary);
+  text-transform: uppercase;
+}
+
+.forensics-metric-val {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sf-text-primary);
+  font-family: monospace;
+}
+
+/* Backtracking & Trajectory visuals */
+.sim-map-placeholder {
+  width: 100%;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-radius);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Satellite Image Compare slider style */
+.sat-image-box {
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-radius);
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  height: 240px;
+}
+
+.sat-image-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--sf-border);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--sf-accent);
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+.sat-overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.9) 0%, transparent 100%);
+  padding: 1.5rem 1rem 0.75rem 1rem;
+  font-size: 0.75rem;
+  color: var(--sf-text-primary);
+}
+
+/* Source Probability Chart style */
+.probability-bar-item {
+  margin-bottom: 1rem;
+}
+
+.probability-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.probability-bar-outer {
+  height: 10px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.probability-bar-inner {
+  height: 100%;
+  background: var(--sf-accent);
+  border-radius: 5px;
+}
+
+/* Timeline vertical style */
+.forensic-timeline {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid var(--sf-border);
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-node {
+  position: relative;
+}
+
+.timeline-node::before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--sf-bg);
+  border: 2px solid var(--sf-accent);
+  box-shadow: 0 0 6px var(--sf-accent);
+  z-index: 5;
+}
+
+.timeline-node.active::before {
+  border-color: var(--sf-danger);
+  box-shadow: 0 0 10px var(--sf-danger);
+  animation: pulse-red 2s infinite;
+}
+
+.timeline-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--sf-text-primary);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.timeline-time {
+  font-size: 0.7rem;
+  color: var(--sf-accent);
+  font-family: monospace;
+}
+
+.timeline-body {
+  font-size: 0.8rem;
+  color: var(--sf-text-secondary);
+  margin-top: 4px;
+}

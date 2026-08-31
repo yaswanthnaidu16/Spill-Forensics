@@ -1,0 +1,73 @@
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.telemetry-card {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.telemetry-icon-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: var(--sf-text-secondary);
+  opacity: 0.45;
+  transition: all 0.3s;
+}
+
+.telemetry-card:hover .telemetry-icon-wrapper {
+  color: var(--sf-accent);
+  opacity: 0.85;
+  transform: scale(1.1);
+}
+
+.telemetry-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sf-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.telemetry-value {
+  font-size: 1.65rem;
+  font-weight: 900;
+  font-family: monospace;
+  color: var(--sf-text-primary);
+  margin-bottom: 0.25rem;
+  line-height: 1.1;
+}
+
+.telemetry-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.telemetry-status.normal {
+  color: var(--sf-success);
+}
+
+.telemetry-status.elevated {
+  color: var(--sf-warning);
+}
+
+.telemetry-status.danger {
+  color: var(--sf-danger);
+}
+
+.telemetry-status.rising {
+  color: var(--sf-accent);
+}
+
+.telemetry-status.falling {
+  color: var(--sf-text-secondary);
+}

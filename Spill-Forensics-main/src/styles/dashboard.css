@@ -1,0 +1,220 @@
+/* dashboard.css — Dashboard layout utilities and section spacing */
+
+/* Section wrapper — used on every homepage section */
+.sf-section {
+  padding: 3rem 0;
+  position: relative;
+}
+
+.sf-section + .sf-section {
+  border-top: 1px solid var(--sf-border);
+}
+
+/* Section number badge (for SIH demo clarity) */
+.sf-section-number {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--sf-bg);
+  border: 1px solid var(--sf-border);
+  color: var(--sf-text-secondary);
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: monospace;
+  padding: 2px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Stat / KPI card variant */
+.sf-kpi-card {
+  background: var(--sf-surface);
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-radius);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s;
+}
+
+.sf-kpi-card:hover {
+  border-color: var(--sf-border-hover);
+  background: var(--sf-card-hover);
+}
+
+.sf-kpi-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--sf-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sf-kpi-icon.cyan {
+  background: rgba(17, 138, 178, 0.1);
+  color: var(--sf-accent);
+  border: 1px solid rgba(17, 138, 178, 0.2);
+}
+
+.sf-kpi-icon.danger {
+  background: rgba(231, 111, 81, 0.1);
+  color: var(--sf-danger);
+  border: 1px solid rgba(231, 111, 81, 0.2);
+}
+
+.sf-kpi-icon.warning {
+  background: rgba(244, 162, 97, 0.1);
+  color: var(--sf-warning);
+  border: 1px solid rgba(244, 162, 97, 0.2);
+}
+
+.sf-kpi-icon.success {
+  background: rgba(42, 157, 143, 0.1);
+  color: var(--sf-success);
+  border: 1px solid rgba(42, 157, 143, 0.2);
+}
+
+.sf-kpi-value {
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-family: monospace;
+  color: var(--sf-text-primary);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.sf-kpi-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sf-text-secondary);
+}
+
+.sf-kpi-delta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.sf-kpi-delta.up { color: var(--sf-danger); }
+.sf-kpi-delta.down { color: var(--sf-success); }
+.sf-kpi-delta.neutral { color: var(--sf-text-secondary); }
+
+/* Two-column sticky sidebar layout */
+.sf-sticky-sidebar {
+  position: sticky;
+  top: calc(70px + 1rem); /* Below navbar */
+  height: fit-content;
+}
+
+/* Monospace code-like text blocks */
+.sf-code-block {
+  background: rgba(7, 59, 76, 0.05);
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-radius);
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: var(--sf-text-primary);
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+/* Progress step indicator (Detect → Analyze → Respond) */
+.sf-workflow-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.sf-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  min-width: 120px;
+}
+
+.sf-step-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--sf-border);
+  background: var(--sf-bg-2);
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.sf-step.active .sf-step-icon {
+  border-color: var(--sf-accent);
+  background: rgba(17, 138, 178, 0.1);
+  box-shadow: 0 0 15px rgba(231, 111, 81, 0.18);
+}
+
+.sf-step-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--sf-text-secondary);
+}
+
+.sf-step.active .sf-step-label {
+  color: var(--sf-accent);
+}
+
+.sf-step-connector {
+  flex: 1;
+  height: 1px;
+  background: var(--sf-border);
+  min-width: 40px;
+  opacity: 0.4;
+  margin-bottom: 22px;
+}
+
+/* Animated data-flowing dashes on connectors */
+.sf-step-connector.animated {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--sf-accent) 0px,
+    var(--sf-accent) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  background-size: 200% 100%;
+  animation: data-flow 2s linear infinite;
+}
+
+@keyframes data-flow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: -200% 0%; }
+}
+
+/* Scan line overlay effect */
+.sf-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.04) 3px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+  border-radius: inherit;
+}

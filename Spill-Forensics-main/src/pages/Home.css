@@ -1,0 +1,763 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Home Page — New Design Styles
+   Adapted from the Figma/Tailwind design into vanilla CSS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Google Fonts ───────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ── Root container ─────────────────────────────────────────────────────── */
+.sf-home-new {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #0E1F40;
+}
+
+/* ── Shared layout ──────────────────────────────────────────────────────── */
+.sf-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .sf-content-container {
+    padding: 0 2.5rem;
+  }
+}
+
+/* ── Section Label ──────────────────────────────────────────────────────── */
+.sf-section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.sf-section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  .sf-section-title {
+    font-size: 3rem;
+  }
+}
+
+.sf-section-underline {
+  width: 3rem;
+  height: 2px;
+}
+
+.sf-section-desc {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+/* ── Sections backgrounds ───────────────────────────────────────────────── */
+.sf-section-white {
+  padding: 6rem 0;
+  background-color: #fff;
+}
+
+.sf-section-surface {
+  padding: 6rem 0;
+  background-color: #F8FAFC;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════════════════════════════════ */
+.sf-new-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #09162B;
+}
+
+.sf-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+}
+
+.sf-hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 22, 43, 0.45) 0%, rgba(9, 22, 43, 0.72) 100%);
+}
+
+.sf-hero-center-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: heroFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroFadeIn {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.sf-hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sf-hero-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+}
+
+.sf-hero-divider {
+  width: 3.5rem;
+  height: 1px;
+  margin: 0 auto 2rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sf-hero-description {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+@media (min-width: 768px) {
+  .sf-hero-description {
+    font-size: 1.25rem;
+  }
+}
+
+.sf-hero-scroll-line {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sf-hero-scroll-line-inner {
+  width: 1px;
+  height: 3.5rem;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.35) 100%);
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DATASET SECTION
+   ═══════════════════════════════════════════════════════════════════════════ */
+.sf-dataset-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .sf-dataset-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.sf-dataset-main-card,
+.sf-dataset-side-card {
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #DCE3EF;
+  background-color: #F8FAFC;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.sf-dataset-main-card:hover,
+.sf-dataset-side-card:hover {
+  box-shadow: 0 8px 32px rgba(14, 31, 64, 0.08);
+  transform: translateY(-2px);
+}
+
+.sf-dataset-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border: 2px solid #1A3A6B;
+  background-color: rgba(26, 58, 107, 0.07);
+}
+
+.sf-dataset-icon-inner {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #1A3A6B;
+  opacity: 0.65;
+}
+
+.sf-dataset-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.sf-dataset-card-text {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.sf-dataset-card-text:last-child {
+  margin-bottom: 0;
+}
+
+.sf-advantages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sf-advantage-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.sf-advantage-dot {
+  margin-top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sf-advantage-label {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sf-advantage-desc {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 0.875rem;
+  margin: 0.125rem 0 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PIPELINE / FLOW DIAGRAM
+   ═══════════════════════════════════════════════════════════════════════════ */
+.sf-pipeline-container {
+  border-radius: 12px;
+  border: 1px solid #DCE3EF;
+  padding: 2rem;
+  background-color: #fff;
+  overflow-x: auto;
+}
+
+@media (min-width: 768px) {
+  .sf-pipeline-container {
+    padding: 3rem;
+  }
+}
+
+.sf-pipeline-flow {
+  min-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Flow Nodes */
+.sf-flow-node {
+  border-radius: 6px;
+  border: 2px solid;
+  text-align: center;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  min-width: 160px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sf-flow-node:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(14, 31, 64, 0.1);
+}
+
+.sf-flow-node-compact {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  min-width: 130px;
+}
+
+.sf-flow-node-wide {
+  min-width: 220px;
+}
+
+.sf-flow-bold {
+  font-weight: 600;
+}
+
+.sf-flow-sublabel {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.sf-flow-data {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+/* Flow Arrows */
+.sf-flow-arrow-down {
+  display: flex;
+  justify-content: center;
+  margin: 0.375rem 0;
+}
+
+.sf-flow-tight {
+  margin: 0.125rem 0;
+}
+
+.sf-flow-arrow-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sf-flow-line-v {
+  width: 1px;
+  height: 20px;
+}
+
+.sf-flow-triangle-down {
+  width: 0;
+  height: 0;
+}
+
+.sf-flow-arrow-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0 0.5rem;
+}
+
+.sf-flow-line-h {
+  width: 24px;
+  height: 1px;
+}
+
+.sf-flow-triangle-right {
+  width: 0;
+  height: 0;
+}
+
+.sf-flow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pipeline Model Boxes */
+.sf-pipeline-fork-svg {
+  width: 100%;
+  max-width: 640px;
+}
+
+.sf-pipeline-models-grid {
+  width: 100%;
+  max-width: 640px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.sf-model-box {
+  border-radius: 8px;
+  border: 2px solid;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sf-model-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 31, 64, 0.12);
+}
+
+.sf-model-header {
+  padding: 0.625rem 1rem;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  text-align: center;
+}
+
+.sf-model-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Evaluation box at bottom of pipeline */
+.sf-eval-box {
+  border-radius: 8px;
+  border: 2px solid;
+  padding: 1.25rem 2.5rem;
+  text-align: center;
+}
+
+.sf-eval-title {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.sf-eval-metrics {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.sf-eval-metric {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONFUSION MATRIX TABLE
+   ═══════════════════════════════════════════════════════════════════════════ */
+.sf-table-scroll {
+  overflow-x: auto;
+}
+
+.sf-confusion-table {
+  border-collapse: collapse;
+  min-width: 460px;
+}
+
+.sf-cm-header-empty {
+  padding: 1rem;
+  border: 1px solid;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 0.875rem;
+  text-align: left;
+  min-width: 160px;
+}
+
+.sf-cm-header {
+  padding: 1.25rem;
+  border: 1px solid;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  min-width: 180px;
+}
+
+.sf-cm-row-header {
+  padding: 1.25rem;
+  border: 1px solid;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.sf-cm-cell {
+  padding: 1.75rem;
+  border: 1px solid;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.sf-cm-cell:hover {
+  transform: scale(1.02);
+}
+
+.sf-cm-correct {
+  background-color: #EAF6EE;
+}
+
+.sf-cm-error {
+  background-color: #FDF0F0;
+}
+
+.sf-cm-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.875rem;
+  font-weight: 700;
+  display: block;
+}
+
+.sf-cm-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* ── Confusion Matrix Two-Column Layout ─────────────────────────────────── */
+.sf-cm-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .sf-cm-two-col {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+}
+
+.sf-cm-table-col {
+  overflow-x: auto;
+}
+
+.sf-cm-image-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sf-cm-spill-image {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(14, 31, 64, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sf-cm-spill-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(14, 31, 64, 0.18);
+}
+
+.sf-cm-image-caption {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 400px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EVALUATION METRICS TABLE
+   ═══════════════════════════════════════════════════════════════════════════ */
+.sf-eval-table {
+  border-collapse: collapse;
+  min-width: 460px;
+  width: 100%;
+}
+
+/* ── Centered Evaluation Section ────────────────────────────────────────── */
+.sf-eval-centered {
+  text-align: center;
+}
+
+.sf-eval-centered .sf-section-num,
+.sf-eval-centered .sf-section-title {
+  text-align: center;
+}
+
+.sf-eval-centered .sf-section-underline {
+  margin: 0 auto;
+}
+
+.sf-eval-centered .sf-section-desc {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.sf-eval-centered .sf-table-scroll {
+  display: flex;
+  justify-content: center;
+}
+
+.sf-eval-centered .sf-eval-table {
+  max-width: 800px;
+  width: 100%;
+}
+
+.sf-et-header {
+  padding: 1rem 1.5rem;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sf-et-header-left {
+  text-align: left;
+  min-width: 160px;
+}
+
+.sf-et-header-center {
+  text-align: center;
+}
+
+.sf-et-metric-cell {
+  padding: 1rem 1.5rem;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-bottom: 1px solid;
+}
+
+.sf-et-value-cell {
+  padding: 1rem 2rem;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  border-bottom: 1px solid;
+  transition: background-color 0.2s ease;
+}
+
+.sf-et-value-cell:hover {
+  background-color: rgba(21, 101, 168, 0.04);
+}
+
+.sf-et-winner-indicator {
+  margin-left: 0.375rem;
+  font-size: 0.75rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLL ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+.sf-section-white,
+.sf-section-surface {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: sectionReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.sf-section-white:nth-child(2) { animation-delay: 0.1s; }
+.sf-section-surface:nth-child(3) { animation-delay: 0.15s; }
+.sf-section-white:nth-child(4) { animation-delay: 0.2s; }
+.sf-section-surface:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes sectionReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .sf-hero-heading {
+    font-size: 3rem;
+  }
+
+  .sf-hero-description {
+    font-size: 1rem;
+  }
+
+  .sf-section-title {
+    font-size: 2rem;
+  }
+
+  .sf-section-white,
+  .sf-section-surface {
+    padding: 3rem 0;
+  }
+
+  .sf-dataset-main-card,
+  .sf-dataset-side-card {
+    padding: 1.5rem;
+  }
+
+  .sf-pipeline-container {
+    padding: 1.5rem;
+  }
+
+  .sf-cm-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sf-hero-center-content,
+  .sf-section-white,
+  .sf-section-surface,
+  .sf-hero-scroll-line-inner {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CUSTOM SCROLLBAR (inherited from design)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.sf-home-new ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.sf-home-new ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sf-home-new ::-webkit-scrollbar-thumb {
+  background: #DCE3EF;
+  border-radius: 3px;
+}
+
+.sf-home-new ::-webkit-scrollbar-thumb:hover {
+  background: #b0bdd4;
+}
